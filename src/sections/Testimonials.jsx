@@ -14,7 +14,7 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="testi" style={{ padding: '100px 48px', textAlign: 'center', background: '#FFF8E7' }}>
+    <section id="testi" className="section-pad" style={{ padding: '80px 20px', textAlign: 'center', background: '#FFF8E7' }}>
       <motion.div ref={ref}
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -25,28 +25,28 @@ export default function Testimonials() {
           fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase',
           padding: '6px 18px', borderRadius: 100, marginBottom: 14,
         }}>Reviews</div>
-        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(28px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15, marginBottom: 14 }}>
+        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(26px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15, marginBottom: 14 }}>
           What People Are Saying
         </h2>
-        <p style={{ fontSize: 16, color: '#777', lineHeight: 1.75, maxWidth: 440, margin: '0 auto 60px' }}>
+        <p style={{ fontSize: 15, color: '#777', lineHeight: 1.75, maxWidth: 440, margin: '0 auto 48px', padding: '0 16px' }}>
           From Gujarat to Delhi, Nidhi's achaar is becoming a household favourite.
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gap: 24, maxWidth: 900, margin: '0 auto', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))' }}>
+      <div className="testi-grid" style={{ display: 'grid', gap: 20, maxWidth: 960, margin: '0 auto', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))' }}>
         {REVIEWS.map((r, i) => (
           <motion.div key={i}
             style={{
-              background: '#fff', borderRadius: 18, padding: '28px 24px',
+              background: '#fff', borderRadius: 18, padding: '24px 20px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.06)', textAlign: 'left',
             }}
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            whileHover={{ y: -5, boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}
+            transition={{ duration: 0.6, delay: i * 0.08 }}
+            whileHover={{ y: -4, boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}
           >
-            <div style={{ color: '#F4A300', fontSize: 14, letterSpacing: '2px', marginBottom: 14 }}>★★★★★</div>
-            <p style={{ fontSize: 14, color: '#555', lineHeight: 1.75, fontStyle: 'italic', marginBottom: 20 }}>{r.text}</p>
+            <div style={{ color: '#F4A300', fontSize: 13, letterSpacing: '2px', marginBottom: 12 }}>★★★★★</div>
+            <p style={{ fontSize: 14, color: '#555', lineHeight: 1.75, fontStyle: 'italic', marginBottom: 16 }}>{r.text}</p>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#0C2416' }}>{r.author}</div>
             <div style={{ fontSize: 11, color: '#bbb' }}>{r.loc}</div>
           </motion.div>

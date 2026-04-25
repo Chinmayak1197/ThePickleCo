@@ -20,3 +20,27 @@ body {
   --spice: #E07A3C;
   --earth: #8B5E3C;
 }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .nav-mobile-logo { font-size: 18px !important; }
+
+  .section-pad { padding: 72px 20px !important; }
+
+  .story-flex { flex-direction: column !important; gap: 40px !important; align-items: center !important; }
+  .story-visual { width: 100% !important; height: 260px !important; max-width: 340px !important; }
+  .stats-row { gap: 24px !important; flex-wrap: wrap !important; }
+
+  .order-card { padding: 36px 24px !important; width: 100% !important; }
+  .order-phone-num { font-size: 18px !important; }
+
+  .products-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important; gap: 16px !important; }
+
+  .testi-grid { grid-template-columns: 1fr !important; }
+
+  .ft-links { gap: 16px !important; }
+
+  .hero-text-wrap { bottom: 80px !important; padding: 0 20px !important; }
+  .hero-cta-row { flex-direction: column !important; align-items: center !important; }
+}

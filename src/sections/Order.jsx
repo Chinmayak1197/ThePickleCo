@@ -12,11 +12,10 @@ export default function Order() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="order" style={{
+    <section id="order" className="section-pad" style={{
       background: 'linear-gradient(135deg, #0c2416 0%, #1a4330 50%, #0c2416 100%)',
-      padding: '110px 48px', textAlign: 'center', position: 'relative', overflow: 'hidden',
+      padding: '80px 20px', textAlign: 'center', position: 'relative', overflow: 'hidden',
     }}>
-      {/* Gold radial hint */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         background: 'radial-gradient(ellipse at 50% 0%, rgba(244,163,0,0.12) 0%, transparent 60%)',
@@ -33,58 +32,59 @@ export default function Order() {
           fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase',
           padding: '6px 18px', borderRadius: 100, marginBottom: 14,
         }}>Order Now</div>
-        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(28px,5vw,52px)', fontWeight: 700, color: '#fff', lineHeight: 1.15, marginBottom: 14 }}>
+        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(26px,5vw,52px)', fontWeight: 700, color: '#fff', lineHeight: 1.15, marginBottom: 14 }}>
           Ready to Order?
         </h2>
-        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, maxWidth: 460, margin: '0 auto 50px' }}>
+        <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, maxWidth: 460, margin: '0 auto 40px', padding: '0 16px' }}>
           Fresh batches made to order. Call or WhatsApp Nidhi directly — we deliver across India.
         </p>
 
         <motion.div
+          className="order-card"
           style={{
-            display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 28,
+            display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 24,
             background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(244,163,0,0.2)',
-            borderRadius: 28, padding: '50px 60px', backdropFilter: 'blur(10px)',
-            maxWidth: 480, width: '100%',
+            borderRadius: 28, padding: '40px 40px', backdropFilter: 'blur(10px)',
+            maxWidth: 440, width: '100%',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div style={{ fontSize: 52 }}>🫙</div>
+          <div style={{ fontSize: 48 }}>🫙</div>
           <div>
-            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 28, fontWeight: 700, color: '#fff', marginBottom: 4 }}>
+            <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 26, fontWeight: 700, color: '#fff', marginBottom: 4 }}>
               Nidhi Khamesra
             </div>
-            <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', letterSpacing: '2px', textTransform: 'uppercase' }}>
               Founder · Acchar By Nidhi
             </div>
           </div>
 
           <motion.div
             style={{
-              display: 'flex', alignItems: 'center', gap: 14,
+              display: 'flex', alignItems: 'center', gap: 14, width: '100%', justifyContent: 'center',
               background: 'rgba(244,163,0,0.1)', border: '1px solid rgba(244,163,0,0.3)',
-              borderRadius: 14, padding: '16px 24px', cursor: 'pointer',
+              borderRadius: 14, padding: '14px 20px', cursor: 'pointer',
             }}
             onClick={() => window.location = 'tel:+919986618363'}
             whileHover={{ background: 'rgba(244,163,0,0.18)', borderColor: 'rgba(244,163,0,0.5)' }}
           >
             <div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: '#F4A300', letterSpacing: 1 }}>+91 99866 18363</div>
+              <div className="order-phone-num" style={{ fontSize: 20, fontWeight: 700, color: '#F4A300', letterSpacing: 1 }}>+91 99866 18363</div>
               <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '2px', textTransform: 'uppercase', marginTop: 2 }}>Call to Order</div>
             </div>
           </motion.div>
 
           <motion.a
-            href="https://wa.me/919986618363?text=Hi%20Nidhi!%20I%20want%20to%20order%20MangoMaa%20Achaar%20%F0%9F%A5%AD"
+            href="https://wa.me/919986618363?text=Hi%20Nidhi!%20I%20want%20to%20order%20Acchar%20By%20Nidhi%20%F0%9F%A5%AD"
             target="_blank"
             rel="noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
               background: '#25D366', color: '#fff', fontWeight: 700, fontSize: 14,
               letterSpacing: '1.5px', textTransform: 'uppercase', textDecoration: 'none',
-              padding: '15px 36px', borderRadius: 100,
+              padding: '14px 32px', borderRadius: 100, width: '100%', justifyContent: 'center',
               boxShadow: '0 6px 24px rgba(37,211,102,0.4)',
             }}
             whileHover={{ y: -3, boxShadow: '0 10px 32px rgba(37,211,102,0.5)' }}

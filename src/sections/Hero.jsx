@@ -55,10 +55,11 @@ export default function Hero() {
       }} />
 
       {/* Brand text */}
-      <motion.div style={{
+      <motion.div className="hero-text-wrap" style={{
         position: 'absolute', zIndex: 10,
-        bottom: 110, left: '50%', transform: 'translateX(-50%)',
-        textAlign: 'center', width: '90%', maxWidth: 680,
+        bottom: 100, left: '50%', transform: 'translateX(-50%)',
+        textAlign: 'center', width: '92%', maxWidth: 680,
+        padding: '0 12px',
         y: textY,
       }}>
         <AnimatePresence>

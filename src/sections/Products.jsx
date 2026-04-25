@@ -11,7 +11,7 @@ const PRODUCTS = [
 
 function Card({ p, index }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
     <motion.div
@@ -22,17 +22,17 @@ function Card({ p, index }) {
       }}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -10, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
+      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -8, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
     >
-      <div style={{ height: 190, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 72, background: p.bg }}>
+      <div style={{ height: 160, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 64, background: p.bg }}>
         {p.emoji}
       </div>
-      <div style={{ padding: '22px' }}>
-        <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 19, fontWeight: 700, color: '#0C2416', marginBottom: 4 }}>{p.name}</div>
-        <div style={{ fontSize: 11, color: '#bbb', letterSpacing: '2px', marginBottom: 10 }}>{p.hindi}</div>
-        <div style={{ fontSize: 13, color: '#777', lineHeight: 1.65, marginBottom: 14 }}>{p.desc}</div>
-        <div style={{ fontSize: 17, fontWeight: 700, color: '#2D7A50' }}>
+      <div style={{ padding: '18px' }}>
+        <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 17, fontWeight: 700, color: '#0C2416', marginBottom: 3 }}>{p.name}</div>
+        <div style={{ fontSize: 10, color: '#bbb', letterSpacing: '2px', marginBottom: 8 }}>{p.hindi}</div>
+        <div style={{ fontSize: 13, color: '#777', lineHeight: 1.6, marginBottom: 12 }}>{p.desc}</div>
+        <div style={{ fontSize: 16, fontWeight: 700, color: '#2D7A50' }}>
           {p.price} <small style={{ fontSize: 11, color: '#bbb', fontWeight: 400 }}>/ 500g jar</small>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function Products() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="products" style={{ padding: '110px 48px', textAlign: 'center', background: '#FFF8E7' }}>
+    <section id="products" className="section-pad" style={{ padding: '80px 48px', textAlign: 'center', background: '#FFF8E7' }}>
       <motion.div ref={ref}
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -56,15 +56,15 @@ export default function Products() {
           fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase',
           padding: '6px 18px', borderRadius: 100, marginBottom: 14,
         }}>Our Collection</div>
-        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(28px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15, marginBottom: 14 }}>
+        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(26px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15, marginBottom: 14 }}>
           Every Jar, A Masterpiece
         </h2>
-        <p style={{ fontSize: 16, color: '#777', lineHeight: 1.75, maxWidth: 480, margin: '0 auto 64px' }}>
+        <p style={{ fontSize: 15, color: '#777', lineHeight: 1.75, maxWidth: 480, margin: '0 auto 48px' }}>
           Made with hand-picked keri, stone-ground spices, and a recipe crafted with love in Nidhi's Kitchen.
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gap: 28, maxWidth: 1100, margin: '0 auto', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))' }}>
+      <div className="products-grid" style={{ display: 'grid', gap: 20, maxWidth: 1100, margin: '0 auto', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))' }}>
         {PRODUCTS.map((p, i) => <Card key={p.name} p={p} index={i} />)}
       </div>
     </section>
