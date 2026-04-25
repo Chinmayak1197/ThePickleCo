@@ -36,13 +36,14 @@ export default function Hero() {
       }}>
         <video
           ref={videoRef}
-          src="/mango_ai.mp4"
           autoPlay muted loop playsInline
-          style={{
-            width: '100%', height: '100%', objectFit: 'cover',
-            imageRendering: 'crisp-edges',
-          }}
-        />
+          poster="/mango_poster.jpg"
+          preload="auto"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src="/mango_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src="/mango_ai.mp4" type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* Cinematic vignette */}
