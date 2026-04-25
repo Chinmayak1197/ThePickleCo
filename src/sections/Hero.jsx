@@ -3,13 +3,12 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 
 export default function Hero() {
   const [textPhase, setTextPhase] = useState(0)
-  const videoRef = useRef(null)
+  const videoRef   = useRef(null)
   const sectionRef = useRef(null)
 
   const { scrollYProgress } = useScroll({ target: sectionRef })
-  const videoScale   = useTransform(scrollYProgress, [0, 1], [1, 1.1])
+  const videoScale   = useTransform(scrollYProgress, [0, 1],    [1, 1.1])
   const videoOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0])
-  const textY        = useTransform(scrollYProgress, [0, 1], [0, 60])
 
   useEffect(() => {
     const vid = videoRef.current
@@ -27,13 +26,9 @@ export default function Hero() {
     <section ref={sectionRef} id="hero" style={{
       position: 'relative', width: '100%', height: '100vh',
       background: '#000', overflow: 'hidden',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
-      {/* Video */}
-      <motion.div style={{
-        position: 'absolute', inset: 0,
-        scale: videoScale, opacity: videoOpacity,
-      }}>
+      {/* Fullscreen video */}
+      <motion.div style={{ position: 'absolute', inset: 0, scale: videoScale, opacity: videoOpacity }}>
         <video
           ref={videoRef}
           autoPlay muted loop playsInline
@@ -42,11 +37,11 @@ export default function Hero() {
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
           <source src="/mango_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-          <source src="/mango_ai.mp4" type="video/mp4" />
+          <source src="/mango_ai.mp4"     type="video/mp4" />
         </video>
       </motion.div>
 
-      {/* Cinematic vignette */}
+      {/* Vignette overlay */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
         background: `
@@ -59,8 +54,7 @@ export default function Hero() {
       <div style={{
         position: 'absolute', zIndex: 10,
         bottom: 90, left: 0, right: 0,
-        textAlign: 'center',
-        padding: '0 24px',
+        textAlign: 'center', padding: '0 24px',
       }}>
         <AnimatePresence>
           {textPhase >= 1 && (
@@ -72,8 +66,7 @@ export default function Hero() {
                 letterSpacing: '3px', textTransform: 'uppercase',
                 padding: '6px 16px', borderRadius: 100, marginBottom: 14,
               }}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               Handcrafted · All Natural · Since 2023
@@ -88,10 +81,9 @@ export default function Hero() {
                   fontSize: 'clamp(36px,10vw,108px)',
                   fontWeight: 900, color: '#fff', lineHeight: 1.05,
                   textShadow: '0 4px 40px rgba(0,0,0,0.6), 0 0 80px rgba(244,163,0,0.15)',
-                  marginBottom: 8, wordBreak: 'keep-all',
+                  marginBottom: 8,
                 }}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
               >
                 Acchar By <em style={{ fontStyle: 'normal', color: '#F4A300' }}>Nidhi</em>
@@ -102,8 +94,7 @@ export default function Hero() {
                   fontSize: 'clamp(16px,4vw,32px)',
                   color: 'rgba(255,255,255,0.75)', marginBottom: 24,
                 }}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Straight from Nidhi's Kitchen
@@ -112,8 +103,7 @@ export default function Hero() {
           )}
 
           {textPhase >= 3 && (
-            <motion.a key="cta"
-              href="#order"
+            <motion.a key="cta" href="#order"
               style={{
                 display: 'inline-block',
                 background: '#F4A300', color: '#0C2416',
@@ -137,16 +127,14 @@ export default function Hero() {
       {/* Scroll hint */}
       <AnimatePresence>
         {textPhase >= 3 && (
-          <motion.div
-            key="scroll"
+          <motion.div key="scroll"
             style={{
               position: 'absolute', bottom: 26, left: '50%', transform: 'translateX(-50%)',
               zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
               color: 'rgba(255,255,255,0.3)', fontSize: 10, letterSpacing: '3px',
               textTransform: 'uppercase', fontFamily: 'Lato, sans-serif', fontWeight: 700,
             }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
             <span>Scroll</span>
