@@ -56,12 +56,11 @@ export default function Hero() {
       }} />
 
       {/* Brand text */}
-      <motion.div className="hero-text-wrap" style={{
+      <div style={{
         position: 'absolute', zIndex: 10,
-        bottom: 100, left: '50%', transform: 'translateX(-50%)',
-        textAlign: 'center', width: '92%', maxWidth: 680,
-        padding: '0 12px',
-        y: textY,
+        bottom: 90, left: 0, right: 0,
+        textAlign: 'center',
+        padding: '0 24px',
       }}>
         <AnimatePresence>
           {textPhase >= 1 && (
@@ -70,8 +69,8 @@ export default function Hero() {
                 display: 'inline-block',
                 background: 'rgba(244,163,0,0.12)', border: '1px solid rgba(244,163,0,0.35)',
                 color: '#FFD166', fontSize: 10, fontWeight: 700,
-                letterSpacing: '4px', textTransform: 'uppercase',
-                padding: '6px 20px', borderRadius: 100, marginBottom: 18,
+                letterSpacing: '3px', textTransform: 'uppercase',
+                padding: '6px 16px', borderRadius: 100, marginBottom: 14,
               }}
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,10 +85,10 @@ export default function Hero() {
               <motion.h1
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: 'clamp(52px,9vw,108px)',
-                  fontWeight: 900, color: '#fff', lineHeight: 1,
+                  fontSize: 'clamp(36px,10vw,108px)',
+                  fontWeight: 900, color: '#fff', lineHeight: 1.05,
                   textShadow: '0 4px 40px rgba(0,0,0,0.6), 0 0 80px rgba(244,163,0,0.15)',
-                  marginBottom: 10,
+                  marginBottom: 8, wordBreak: 'keep-all',
                 }}
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,8 +99,8 @@ export default function Hero() {
               <motion.p
                 style={{
                   fontFamily: "'Dancing Script', cursive",
-                  fontSize: 'clamp(18px,3vw,32px)',
-                  color: 'rgba(255,255,255,0.75)', marginBottom: 28,
+                  fontSize: 'clamp(16px,4vw,32px)',
+                  color: 'rgba(255,255,255,0.75)', marginBottom: 24,
                 }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -118,22 +117,22 @@ export default function Hero() {
               style={{
                 display: 'inline-block',
                 background: '#F4A300', color: '#0C2416',
-                fontWeight: 700, fontSize: 13, letterSpacing: '2.5px',
+                fontWeight: 700, fontSize: 13, letterSpacing: '2px',
                 textTransform: 'uppercase', textDecoration: 'none',
-                padding: '15px 40px', borderRadius: 100,
+                padding: '14px 36px', borderRadius: 100,
                 boxShadow: '0 6px 28px rgba(244,163,0,0.5)',
               }}
               initial={{ opacity: 0, y: 16, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7 }}
-              whileHover={{ background: '#FFD166', y: -3, boxShadow: '0 12px 36px rgba(244,163,0,0.6)' }}
+              whileHover={{ background: '#FFD166', y: -3 }}
               whileTap={{ scale: 0.97 }}
             >
               Order Now
             </motion.a>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
 
       {/* Scroll hint */}
       <AnimatePresence>
