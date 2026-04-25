@@ -25,9 +25,7 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} id="hero" style={{
-      position: 'relative', width: '100%',
-      height: '100svh',
-      minHeight: '-webkit-fill-available',
+      position: 'relative', width: '100%', height: '100vh',
       background: '#000', overflow: 'hidden',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
     }}>
@@ -41,12 +39,7 @@ export default function Hero() {
           autoPlay muted loop playsInline
           poster="/mango_poster.jpg"
           preload="auto"
-          style={{
-            width: '100%', height: '100%',
-            objectFit: 'contain',
-            objectPosition: 'center center',
-            background: '#000',
-          }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
           <source src="/mango_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
           <source src="/mango_ai.mp4" type="video/mp4" />
