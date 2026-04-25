@@ -11,7 +11,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
-  const links = [['Products','#products'],['Order','#order'],['Our Story','#story'],['Contact','#contact']]
+  const links = [['Products','#products'],['Order','#order'],['Our Story','#story'],['Feedback','#feedback'],['Contact','#contact']]
 
   return (
     <>
