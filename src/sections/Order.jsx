@@ -77,7 +77,7 @@ export default function Order() {
           </motion.div>
 
           <motion.a
-            href="https://wa.me/917016102930?text=Hi%20Nidhi!%20I%20want%20to%20order%20Acchar%20By%20Nidhi%20%F0%9F%A5%AD"
+            href="https://wa.me/917016102930?text=Hi%20Nidhi!%20I%20want%20to%20order%20Acchar%20%F0%9F%A5%AD"
             target="_blank"
             rel="noreferrer"
             style={{
