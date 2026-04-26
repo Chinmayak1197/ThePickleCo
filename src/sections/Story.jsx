@@ -49,21 +49,6 @@ export default function Story() {
           </div>
         </motion.div>
 
-        <motion.div
-          className="story-visual"
-          style={{
-            width: 320, height: 320, borderRadius: 28, flexShrink: 0,
-            background: 'radial-gradient(ellipse at 35% 35%, #2d7a50, #1a4330)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 100, boxShadow: '0 24px 64px rgba(0,0,0,0.45)',
-          }}
-          initial={{ opacity: 0, x: 40 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ scale: 1.03 }}
-        >
-          🫙
-        </motion.div>
       </div>
     </section>
   )
