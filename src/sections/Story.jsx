@@ -36,7 +36,7 @@ export default function Story() {
           </p>
 
           <div className="stats-row" style={{ display: 'flex', gap: 36, marginTop: 40, flexWrap: 'wrap' }}>
-            {[['2023','Est. Year'],['5','Varieties'],['50+','Orders Placed']].map(([val, label]) => (
+            {[['2023','Est. Year'],['2','Varieties'],['50+','Orders Placed']].map(([val, label]) => (
               <motion.div key={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
