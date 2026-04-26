@@ -22,8 +22,8 @@ function Card({ p, index }) {
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -8, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
     >
-      <div style={{ height: 200, background: p.bg, overflow: 'hidden' }}>
-        <img src={p.img} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+      <div style={{ height: 240, background: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <img src={p.img} alt={p.name} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
       </div>
       <div style={{ padding: '18px' }}>
         <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 17, fontWeight: 700, color: '#0C2416', marginBottom: 3 }}>{p.name}</div>
