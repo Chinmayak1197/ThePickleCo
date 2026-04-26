@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const PRODUCTS = [
-  { name: 'Keri Pickle',  hindi: 'KERI NO ACHAAR',  desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 400', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', emoji: '🥭' },
+  { name: 'Keri Pickle',  hindi: 'KERI ACHAAR',  desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 400', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', emoji: '🥭' },
   { name: 'Lemon Pickle', hindi: 'NIMBU KA ACHAAR', desc: 'Whole lemons sun-dried and packed with black salt, turmeric, and red chilli.', price: '₹ 400', bg: 'linear-gradient(135deg,#fffff0,#fffacd)', emoji: '🍋' },
 ]
 
