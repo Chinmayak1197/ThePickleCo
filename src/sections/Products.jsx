@@ -2,11 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const PRODUCTS = [
-  { name: 'Keri Pickle',         hindi: 'KERI NO ACHAAR',     desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 280', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', emoji: '🥭' },
-  { name: 'Green Chilli Pickle', hindi: 'HARI MIRCH KA ACHAAR', desc: 'Bold and fiery. Fresh green chillies stuffed with fennel, fenugreek, and mustard seeds.', price: '₹ 220', bg: 'linear-gradient(135deg,#fce4ec,#ffccbc)', emoji: '🌶️' },
-  { name: 'Mixed Vegetable',     hindi: 'MIX SABZI KA ACHAAR', desc: 'Carrot, cauliflower, turnip and chilli slow-cured in a tangy spiced oil blend.', price: '₹ 240', bg: 'linear-gradient(135deg,#e8f5e9,#dcedc8)', emoji: '🥗' },
-  { name: 'Garlic Pickle',       hindi: 'LAHSUN KA ACHAAR',   desc: 'Whole garlic cloves marinated in spiced vinegar for 21 days. Aged and bold.', price: '₹ 300', bg: 'linear-gradient(135deg,#e3f2fd,#f3e5f5)', emoji: '🧄' },
-  { name: 'Lemon Pickle',        hindi: 'NIMBU KA ACHAAR',    desc: 'Whole lemons sun-dried and packed with black salt, turmeric, and red chilli.', price: '₹ 200', bg: 'linear-gradient(135deg,#fffff0,#fffacd)', emoji: '🍋' },
+  { name: 'Keri Pickle',  hindi: 'KERI NO ACHAAR',  desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 400', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', emoji: '🥭' },
+  { name: 'Lemon Pickle', hindi: 'NIMBU KA ACHAAR', desc: 'Whole lemons sun-dried and packed with black salt, turmeric, and red chilli.', price: '₹ 400', bg: 'linear-gradient(135deg,#fffff0,#fffacd)', emoji: '🍋' },
 ]
 
 function Card({ p, index }) {
@@ -33,7 +30,7 @@ function Card({ p, index }) {
         <div style={{ fontSize: 10, color: '#bbb', letterSpacing: '2px', marginBottom: 8 }}>{p.hindi}</div>
         <div style={{ fontSize: 13, color: '#777', lineHeight: 1.6, marginBottom: 12 }}>{p.desc}</div>
         <div style={{ fontSize: 16, fontWeight: 700, color: '#2D7A50' }}>
-          {p.price} <small style={{ fontSize: 11, color: '#bbb', fontWeight: 400 }}>/ 500g jar</small>
+          {p.price} <small style={{ fontSize: 11, color: '#bbb', fontWeight: 400 }}>/ 500g + shipping</small>
         </div>
       </div>
     </motion.div>

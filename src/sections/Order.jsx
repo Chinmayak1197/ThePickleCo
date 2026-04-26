@@ -67,17 +67,17 @@ export default function Order() {
               background: 'rgba(244,163,0,0.1)', border: '1px solid rgba(244,163,0,0.3)',
               borderRadius: 14, padding: '14px 20px', cursor: 'pointer',
             }}
-            onClick={() => window.location = 'tel:+919986618363'}
+            onClick={() => window.location = 'tel:+917016102930'}
             whileHover={{ background: 'rgba(244,163,0,0.18)', borderColor: 'rgba(244,163,0,0.5)' }}
           >
             <div>
-              <div className="order-phone-num" style={{ fontSize: 20, fontWeight: 700, color: '#F4A300', letterSpacing: 1 }}>+91 99866 18363</div>
+              <div className="order-phone-num" style={{ fontSize: 20, fontWeight: 700, color: '#F4A300', letterSpacing: 1 }}>+91 70161 02930</div>
               <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '2px', textTransform: 'uppercase', marginTop: 2 }}>Call to Order</div>
             </div>
           </motion.div>
 
           <motion.a
-            href="https://wa.me/919986618363?text=Hi%20Nidhi!%20I%20want%20to%20order%20Acchar%20By%20Nidhi%20%F0%9F%A5%AD"
+            href="https://wa.me/917016102930?text=Hi%20Nidhi!%20I%20want%20to%20order%20Acchar%20By%20Nidhi%20%F0%9F%A5%AD"
             target="_blank"
             rel="noreferrer"
             style={{
