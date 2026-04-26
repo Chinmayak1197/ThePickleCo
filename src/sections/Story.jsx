@@ -29,7 +29,7 @@ export default function Story() {
             Made with Love.<br />Served with Pride.
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.85, marginBottom: 16 }}>
-            In 2023, Nidhi Khamesra started making keri achaar in her kitchen — the same way she'd watched it made growing up. Hand-cut keri pieces, cold-pressed mustard oil, freshly ground spices.
+            In 2023, Nidhi Khamesra started making keri achaar in her kitchen — the same way she'd watched it made growing up from her Mom. Hand-cut keri pieces, cold-pressed mustard oil, freshly ground spices.
           </p>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.85 }}>
             What started as jars for family and friends quickly grew into something bigger. Today, Acchar By Nidhi delivers across India — no preservatives, no shortcuts, just real homemade achaar.
