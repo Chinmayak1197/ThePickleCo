@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const PRODUCTS = [
-  { name: 'Keri Pickle',  hindi: 'KERI ACHAAR',  desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 450', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', emoji: '🥭' },
-  { name: 'Lemon Pickle', hindi: 'NIMBU KA ACHAAR', desc: 'Whole lemons sun-dried and packed with black salt, turmeric, and red chilli.', price: '₹ 400', bg: 'linear-gradient(135deg,#fffff0,#fffacd)', emoji: '🍋' },
+  { name: 'Keri Pickle',  hindi: 'KERI ACHAAR',  desc: 'Fresh keri chunks in cold-pressed mustard oil with 12 traditional spices.', price: '₹ 450', bg: 'linear-gradient(135deg,#fff3e0,#ffe0b2)', img: '/keri_jar.png' },
+  { name: 'Lemon Pickle', hindi: 'NIMBU KA ACHAAR', desc: 'Whole lemons sun-dried and packed with black salt, turmeric, and red chilli.', price: '₹ 400', bg: 'linear-gradient(135deg,#fffff0,#fffacd)', img: '/lemon_jar.png' },
 ]
 
 function Card({ p, index }) {
@@ -22,8 +22,8 @@ function Card({ p, index }) {
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -8, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
     >
-      <div style={{ height: 160, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 64, background: p.bg }}>
-        {p.emoji}
+      <div style={{ height: 200, background: p.bg, overflow: 'hidden' }}>
+        <img src={p.img} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
       </div>
       <div style={{ padding: '18px' }}>
         <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 17, fontWeight: 700, color: '#0C2416', marginBottom: 3 }}>{p.name}</div>
