@@ -1,5 +1,25 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+
+function CountUp({ target, duration = 1.5, inView }) {
+  const [val, setVal] = useState(0)
+  const isPlus = String(target).includes('+')
+  const num = parseInt(String(target).replace('+', ''))
+
+  useEffect(() => {
+    if (!inView) return
+    let start = null
+    const step = (ts) => {
+      if (!start) start = ts
+      const prog = Math.min((ts - start) / (duration * 1000), 1)
+      setVal(Math.floor(prog * num))
+      if (prog < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [inView, num, duration])
+
+  return <>{val}{isPlus ? '+' : ''}</>
+}
 
 function LineReveal({ children, delay = 0, style = {} }) {
   const ref = useRef(null)
@@ -86,7 +106,9 @@ export default function Story() {
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: i * 0.14, ease: [0.16, 1, 0.3, 1] }}
               >
-                <strong style={{ display: 'block', fontFamily: "'Playfair Display',serif", fontSize: 'clamp(36px,6vw,52px)', fontWeight: 900, color: '#F4A300', lineHeight: 1 }}>{val}</strong>
+                <strong style={{ display: 'block', fontFamily: "'Playfair Display',serif", fontSize: 'clamp(36px,6vw,52px)', fontWeight: 900, color: '#F4A300', lineHeight: 1 }}>
+                  <CountUp target={val} inView={statsInView} />
+                </strong>
                 <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', letterSpacing: '2.5px', textTransform: 'uppercase', marginTop: 4, display: 'block' }}>{label}</span>
               </motion.div>
             ))}

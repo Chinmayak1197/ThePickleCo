@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const PRODUCTS = [
@@ -9,18 +9,31 @@ const PRODUCTS = [
 function Card({ p, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const [tilt, setTilt] = useState({ x: 0, y: 0 })
+
+  const handleMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -16
+    setTilt({ x, y })
+  }
 
   return (
     <motion.div
       ref={ref}
+      onMouseMove={handleMove}
+      onMouseLeave={() => setTilt({ x: 0, y: 0 })}
       style={{
         background: '#fff', borderRadius: 22, overflow: 'hidden',
         boxShadow: '0 4px 28px rgba(0,0,0,0.06)', cursor: 'pointer',
+        perspective: 1000,
+        rotateX: tilt.y, rotateY: tilt.x,
+        transformStyle: 'preserve-3d',
       }}
       initial={{ opacity: 0, y: 80 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -14, boxShadow: '0 28px 60px rgba(0,0,0,0.18)', scale: 1.02 }}
+      whileHover={{ y: -14, boxShadow: '0 28px 60px rgba(0,0,0,0.18)' }}
     >
       <motion.div
         style={{ height: 240, background: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}

@@ -8,7 +8,7 @@ export default function Footer() {
         Straight from Nidhi's Kitchen
       </div>
       <div className="ft-links" style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 28 }}>
-        {[['Products','#products'],['Order','#order'],['Our Story','#story'],['+91 99866 18363','tel:+919986618363'],['WhatsApp','https://wa.me/919986618363']].map(([label, href]) => (
+        {[['Products','#products'],['Order','#order'],['Our Story','#story'],['+91 70161 02930','tel:+917016102930'],['WhatsApp','https://wa.me/917016102930']].map(([label, href]) => (
           <a key={label} href={href}
             style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 13, letterSpacing: 1 }}
             onMouseEnter={e => e.target.style.color = '#F4A300'}
