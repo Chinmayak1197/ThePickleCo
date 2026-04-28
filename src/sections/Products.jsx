@@ -22,9 +22,14 @@ function Card({ p, index }) {
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -8, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
     >
-      <div style={{ height: 240, background: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      <motion.div
+        style={{ height: 240, background: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
+        initial={{ clipPath: 'inset(100% 0% 0% 0%)' }}
+        animate={inView ? { clipPath: 'inset(0% 0% 0% 0%)' } : {}}
+        transition={{ duration: 0.9, delay: index * 0.1 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+      >
         <img src={p.img} alt={p.name} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
-      </div>
+      </motion.div>
       <div style={{ padding: '18px' }}>
         <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 17, fontWeight: 700, color: '#0C2416', marginBottom: 3 }}>{p.name}</div>
         <div style={{ fontSize: 10, color: '#bbb', letterSpacing: '2px', marginBottom: 8 }}>{p.hindi}</div>

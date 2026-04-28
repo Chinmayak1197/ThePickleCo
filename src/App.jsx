@@ -1,4 +1,6 @@
 import Nav from './components/Nav'
+import CustomCursor from './components/CustomCursor'
+import ScrollProgress from './components/ScrollProgress'
 import Hero from './sections/Hero'
 import Ticker from './sections/Ticker'
 import Products from './sections/Products'
@@ -12,6 +14,8 @@ import './App.css'
 export default function App() {
   return (
     <>
+      <CustomCursor />
+      <ScrollProgress />
       <Nav />
       <Hero />
       <Ticker />

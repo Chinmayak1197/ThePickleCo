@@ -81,12 +81,23 @@ export default function Hero() {
                   fontSize: 'clamp(36px,10vw,108px)',
                   fontWeight: 900, color: '#fff', lineHeight: 1.05,
                   textShadow: '0 4px 40px rgba(0,0,0,0.6), 0 0 80px rgba(244,163,0,0.15)',
-                  marginBottom: 8,
+                  marginBottom: 8, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0 0.25em',
                 }}
-                initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
               >
-                Acchar By <em style={{ fontStyle: 'normal', color: '#F4A300' }}>Nidhi</em>
+                {['Acchar', 'By'].map((word, i) => (
+                  <motion.span key={word}
+                    initial={{ opacity: 0, y: 40, rotateX: -20 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ display: 'inline-block' }}
+                  >{word}</motion.span>
+                ))}
+                <motion.em
+                  initial={{ opacity: 0, y: 40, rotateX: -20 }}
+                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  transition={{ duration: 0.8, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ fontStyle: 'normal', color: '#F4A300', display: 'inline-block' }}
+                >Nidhi</motion.em>
               </motion.h1>
               <motion.p
                 style={{
@@ -95,7 +106,7 @@ export default function Hero() {
                   color: 'rgba(255,255,255,0.75)', marginBottom: 24,
                 }}
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Straight from Nidhi's Kitchen
               </motion.p>

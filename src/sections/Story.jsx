@@ -36,11 +36,11 @@ export default function Story() {
           </p>
 
           <div className="stats-row" style={{ display: 'flex', gap: 36, marginTop: 40, flexWrap: 'wrap' }}>
-            {[['2023','Est. Year'],['2','Varieties'],['50+','Orders Placed']].map(([val, label]) => (
+            {[['2023','Est. Year'],['2','Varieties'],['50+','Orders Placed']].map(([val, label], i) => (
               <motion.div key={label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.3 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               >
                 <strong style={{ display: 'block', fontFamily: "'Playfair Display',serif", fontSize: 'clamp(32px,6vw,44px)', fontWeight: 900, color: '#F4A300', lineHeight: 1 }}>{val}</strong>
                 <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', letterSpacing: '2px', textTransform: 'uppercase' }}>{label}</span>
