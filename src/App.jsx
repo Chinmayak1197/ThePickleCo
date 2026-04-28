@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
 import CustomCursor from './components/CustomCursor'
 import ScrollProgress from './components/ScrollProgress'
@@ -15,6 +15,11 @@ import './App.css'
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = introDone ? '' : 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [introDone])
 
   return (
     <>
