@@ -43,28 +43,27 @@ export default function CustomCursor() {
         opacity: visible ? 1 : 0,
         scale: hovered ? 1.4 : 1,
         transition: 'opacity 0.3s, scale 0.2s',
-        rotate: 30,
       }}
     >
-      <svg width="28" height="44" viewBox="0 0 28 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main pickle body */}
-        <ellipse cx="14" cy="22" rx="11" ry="19" fill="#4a8c3f"/>
-        {/* Highlight */}
-        <ellipse cx="14" cy="22" rx="9" ry="17" fill="#5aa64e"/>
-        {/* Bumps */}
-        <circle cx="9"  cy="14" r="2.2" fill="#3d7a34"/>
-        <circle cx="18" cy="11" r="1.8" fill="#3d7a34"/>
-        <circle cx="7"  cy="22" r="2"   fill="#3d7a34"/>
-        <circle cx="19" cy="19" r="2.2" fill="#3d7a34"/>
-        <circle cx="11" cy="30" r="2"   fill="#3d7a34"/>
-        <circle cx="19" cy="29" r="1.8" fill="#3d7a34"/>
-        <circle cx="13" cy="20" r="1.5" fill="#3d7a34"/>
-        {/* Top cap */}
-        <ellipse cx="14" cy="4"  rx="5"  ry="2.5" fill="#2d5c26"/>
-        {/* Bottom cap */}
-        <ellipse cx="14" cy="40" rx="5"  ry="2.5" fill="#2d5c26"/>
-        {/* Shine */}
-        <ellipse cx="10" cy="16" rx="2"  ry="5"   fill="rgba(255,255,255,0.18)" transform="rotate(-10 10 16)"/>
+      <svg width="30" height="40" viewBox="0 0 30 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Jar lid */}
+        <rect x="7" y="2" width="16" height="5" rx="2" fill="#c8860a"/>
+        <rect x="5" y="5" width="20" height="3" rx="1.5" fill="#F4A300"/>
+        {/* Jar body */}
+        <rect x="4" y="8" width="22" height="26" rx="4" fill="#e8f5e0"/>
+        {/* Achaar filling */}
+        <rect x="4" y="16" width="22" height="18" rx="0" fill="#c8860a" opacity="0.85"/>
+        <rect x="4" y="20" width="22" height="14" rx="0" fill="#b87333" opacity="0.7"/>
+        {/* Mango chunks */}
+        <rect x="8"  y="22" width="5" height="4" rx="1.5" fill="#F4A300" opacity="0.9"/>
+        <rect x="16" y="24" width="5" height="4" rx="1.5" fill="#FFD166" opacity="0.9"/>
+        <rect x="10" y="28" width="4" height="3" rx="1"   fill="#F4A300" opacity="0.8"/>
+        {/* Jar shine */}
+        <rect x="7" y="9" width="3" height="14" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+        {/* Jar outline */}
+        <rect x="4" y="8" width="22" height="26" rx="4" stroke="#2D7A50" strokeWidth="1.2" fill="none"/>
+        {/* Bottom */}
+        <rect x="6" y="34" width="18" height="2" rx="1" fill="#2D7A50" opacity="0.4"/>
       </svg>
     </motion.div>
   )
