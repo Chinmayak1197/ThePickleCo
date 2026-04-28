@@ -17,10 +17,10 @@ function Card({ p, index }) {
         background: '#fff', borderRadius: 22, overflow: 'hidden',
         boxShadow: '0 4px 28px rgba(0,0,0,0.06)', cursor: 'pointer',
       }}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 80 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -8, boxShadow: '0 18px 50px rgba(0,0,0,0.13)' }}
+      transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -14, boxShadow: '0 28px 60px rgba(0,0,0,0.18)', scale: 1.02 }}
     >
       <motion.div
         style={{ height: 240, background: p.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
@@ -58,9 +58,16 @@ export default function Products() {
           fontSize: 10, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase',
           padding: '6px 18px', borderRadius: 100, marginBottom: 14,
         }}>Our Collection</div>
-        <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(26px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15, marginBottom: 14 }}>
-          Every Jar, A Masterpiece
-        </h2>
+        <div style={{ overflow: 'hidden', marginBottom: 14 }}>
+          <motion.h2
+            style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(26px,5vw,52px)', fontWeight: 700, color: '#0C2416', lineHeight: 1.15 }}
+            initial={{ y: '110%' }}
+            animate={inView ? { y: 0 } : {}}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
+          >
+            Every Jar, A Masterpiece
+          </motion.h2>
+        </div>
         <p style={{ fontSize: 15, color: '#777', lineHeight: 1.75, maxWidth: 480, margin: '0 auto 48px' }}>
           Made with hand-picked keri, stone-ground spices, and a recipe crafted with love in Nidhi's Kitchen.
         </p>
