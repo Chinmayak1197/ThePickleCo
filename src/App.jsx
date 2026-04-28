@@ -1,7 +1,7 @@
 import Nav from './components/Nav'
 import CustomCursor from './components/CustomCursor'
 import ScrollProgress from './components/ScrollProgress'
-import SectionDivider from './components/SectionDivider'
+import ScrollBanner from './components/ScrollBanner'
 import Hero from './sections/Hero'
 import Ticker from './sections/Ticker'
 import Products from './sections/Products'
@@ -26,10 +26,11 @@ export default function App() {
       <Hero />
       <Ticker />
       <Products />
-      <SectionDivider items={[{icon:'🥭',label:'Hand Picked'},{icon:'🫙',label:'No Preservatives'},{icon:'🌿',label:'100% Natural'},{icon:'🏠',label:'Homemade'}]} />
+      <ScrollBanner text="Handcrafted with Love" direction={1}  bg="#0C2416" color="#F4A300" />
       <Order />
-      <SectionDivider items={[{icon:'❤️',label:'Made with Love'},{icon:'✨',label:'Since 2023'},{icon:'🚚',label:'Pan India Delivery'}]} />
+      <ScrollBanner text="No Preservatives · All Natural · Since 2023" direction={-1} bg="#FFF8E7" color="#2D7A50" />
       <Story />
+      <ScrollBanner text="Straight from Nidhi's Kitchen" direction={1} bg="#0C2416" color="rgba(255,255,255,0.15)" />
       <Testimonials />
       <Feedback />
       <Footer />
