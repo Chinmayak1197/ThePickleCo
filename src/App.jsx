@@ -3,7 +3,6 @@ import Nav from './components/Nav'
 import CustomCursor from './components/CustomCursor'
 import ScrollProgress from './components/ScrollProgress'
 import Intro from './components/Intro'
-import SmoothScroll from './components/SmoothScroll'
 import Hero from './sections/Hero'
 import Ticker from './sections/Ticker'
 import Products from './sections/Products'
@@ -22,8 +21,6 @@ export default function App() {
       <Intro onDone={() => setIntroDone(true)} />
       <CustomCursor />
       <ScrollProgress />
-      <SmoothScroll />
-
       {/* Grain overlay */}
       <div style={{
         position: 'fixed', inset: 0, zIndex: 9990, pointerEvents: 'none',
