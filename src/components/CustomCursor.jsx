@@ -34,35 +34,38 @@ export default function CustomCursor() {
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return null
 
   return (
-    <>
-      {/* Outer ring */}
-      <motion.div
-        style={{
-          x: springX, y: springY,
-          translateX: '-50%', translateY: '-50%',
-          position: 'fixed', top: 0, left: 0, zIndex: 9999,
-          pointerEvents: 'none',
-          width: hovered ? 48 : 32,
-          height: hovered ? 48 : 32,
-          border: `2px solid ${hovered ? '#F4A300' : 'rgba(244,163,0,0.6)'}`,
-          borderRadius: '50%',
-          opacity: visible ? 1 : 0,
-          transition: 'width 0.2s ease, height 0.2s ease, border-color 0.2s ease',
-        }}
-      />
-      {/* Inner dot */}
-      <motion.div
-        style={{
-          x, y,
-          translateX: '-50%', translateY: '-50%',
-          position: 'fixed', top: 0, left: 0, zIndex: 9999,
-          pointerEvents: 'none',
-          width: 5, height: 5,
-          background: '#F4A300',
-          borderRadius: '50%',
-          opacity: visible ? 1 : 0,
-        }}
-      />
-    </>
+    <motion.div
+      style={{
+        x: springX, y: springY,
+        translateX: '-50%', translateY: '-50%',
+        position: 'fixed', top: 0, left: 0, zIndex: 9999,
+        pointerEvents: 'none',
+        opacity: visible ? 1 : 0,
+        scale: hovered ? 1.4 : 1,
+        transition: 'opacity 0.3s, scale 0.2s',
+        rotate: 30,
+      }}
+    >
+      <svg width="28" height="44" viewBox="0 0 28 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Main pickle body */}
+        <ellipse cx="14" cy="22" rx="11" ry="19" fill="#4a8c3f"/>
+        {/* Highlight */}
+        <ellipse cx="14" cy="22" rx="9" ry="17" fill="#5aa64e"/>
+        {/* Bumps */}
+        <circle cx="9"  cy="14" r="2.2" fill="#3d7a34"/>
+        <circle cx="18" cy="11" r="1.8" fill="#3d7a34"/>
+        <circle cx="7"  cy="22" r="2"   fill="#3d7a34"/>
+        <circle cx="19" cy="19" r="2.2" fill="#3d7a34"/>
+        <circle cx="11" cy="30" r="2"   fill="#3d7a34"/>
+        <circle cx="19" cy="29" r="1.8" fill="#3d7a34"/>
+        <circle cx="13" cy="20" r="1.5" fill="#3d7a34"/>
+        {/* Top cap */}
+        <ellipse cx="14" cy="4"  rx="5"  ry="2.5" fill="#2d5c26"/>
+        {/* Bottom cap */}
+        <ellipse cx="14" cy="40" rx="5"  ry="2.5" fill="#2d5c26"/>
+        {/* Shine */}
+        <ellipse cx="10" cy="16" rx="2"  ry="5"   fill="rgba(255,255,255,0.18)" transform="rotate(-10 10 16)"/>
+      </svg>
+    </motion.div>
   )
 }
